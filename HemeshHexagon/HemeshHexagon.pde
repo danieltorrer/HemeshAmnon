@@ -6,11 +6,12 @@
 import peasy.*;
 PeasyCam cam;
 
-import wblut.math.*;
-import wblut.processing.*;
-import wblut.hemesh.*;
+import wblut.core.*;
 import wblut.geom.*;
-import wblut.*;
+import wblut.hemesh.*;
+import wblut.math.*;
+import wblut.nurbs.*;
+import wblut.processing.*;
 
 WB_Render render;
 HE_Mesh mesh1, mesh2;
@@ -65,4 +66,3 @@ void drawControls() {
   text("Screenshot (s)", 10, 80);
   cam.endHUD();
 }
-

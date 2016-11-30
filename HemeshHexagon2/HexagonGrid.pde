@@ -12,12 +12,12 @@ static class HexagonGrid {
       int temp = centerPoints.size();
       for (int i=centerPoints.size()-1; i>=previousSize; i--) {
         WB_Point p = centerPoints.get(i);
-        addPoint(centerPoints, p.x + xOff*2, p.y);
-        addPoint(centerPoints, p.x + xOff, p.y + yOff*3);
-        addPoint(centerPoints, p.x - xOff, p.y + yOff*3);
-        addPoint(centerPoints, p.x - xOff*2, p.y);
-        addPoint(centerPoints, p.x - xOff, p.y - yOff*3);
-        addPoint(centerPoints, p.x + xOff, p.y - yOff*3);
+        addPoint(centerPoints, p.X().xd() + xOff*2, p.Y().yd());
+        addPoint(centerPoints, p.X().xd() + xOff, p.Y().yd() + yOff*3);
+        addPoint(centerPoints, p.X().xd() - xOff, p.Y().yd() + yOff*3);
+        addPoint(centerPoints, p.X().xd() - xOff*2, p.Y().yd());
+        addPoint(centerPoints, p.X().xd() - xOff, p.Y().yd() - yOff*3);
+        addPoint(centerPoints, p.X().xd() + xOff, p.Y().yd() - yOff*3);
       }
       previousSize = temp;
     }
@@ -34,8 +34,8 @@ static class HexagonGrid {
       WB_Point cp = centerPoints.get(i);
       for (int j=0; j<6; j++) {
         int index = i*6+j;
-        vertices[index][0] = cp.x + hexagonCoordinates[j][0];
-        vertices[index][1] = cp.y + hexagonCoordinates[j][1];
+        vertices[index][0] = cp.X().xd() + hexagonCoordinates[j][0];
+        vertices[index][1] = cp.Y().yd() + hexagonCoordinates[j][1];
         vertices[index][2] = 0;
       }
     }
@@ -60,4 +60,3 @@ static class HexagonGrid {
     points.add(new WB_Point(x, y));
   }
 }
-
